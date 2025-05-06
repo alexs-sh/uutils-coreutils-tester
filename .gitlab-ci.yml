@@ -13,6 +13,8 @@ stages:
     name: "${CI_JOB_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
       - images.tar.gz
+  tags:
+    - docker
 
 qemu-aarch64:
   extends: .build-image
