@@ -1,15 +1,25 @@
 stages:
   - build
 
-qemu-aarch64:
+.build-image:
   stage: build
   image: debian:12
   variables:
     GIT_SUBMODULE_STRATEGY: normal
-  script:
+  before_script:
     - ./ci/prepare-build-host.sh
     - ./ci/build.sh
   artifacts:
-    name: "qemu-aarch64-${CI_COMMIT_SHORT_SHA}"
+    name: "${CI_JOB_NAME}-${CI_COMMIT_SHORT_SHA}"
     paths:
-    - images.tar.gz
+      - images.tar.gz
+
+qemu-aarch64:
+  extends: .build-image
+  script:
+    - ./ci/build.sh qemu_aarch64_virt_uutils_coreutils_defconfig
+
+raspberry-pi2:
+  extends: .build-image
+  script:
+    - ./ci/build.sh raspberrypi2_uutils_coreutils_defconfig
