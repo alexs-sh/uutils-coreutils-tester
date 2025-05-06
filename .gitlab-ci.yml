@@ -1,0 +1,15 @@
+stages:
+  - build
+
+qemu-aarch64:
+  stage: build
+  image: debian:12
+  variables:
+    GIT_SUBMODULE_STRATEGY: normal
+  script:
+    - ./ci/prepare-build-host.sh
+    - ./ci/build.sh
+  artifacts:
+    name: "qemu-aarch64-${CI_COMMIT_SHORT_SHA}"
+    paths:
+    - images.tar.gz
