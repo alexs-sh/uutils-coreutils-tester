@@ -8,14 +8,27 @@ to test uutils/coreutils and Buildroot changes on embedded devices and QEMU.
 
 ## QEMU
 
-Running aarch64 images in QEMU
+Here is an example of building and running AArch64 images in QEMU.
+
+Build
 
 ```
-qemu-system-aarch64 -M virt -cpu cortex-a53 -nographic -smp 1 -kernel Image -append "rootwait root=/dev/vda console=ttyAMA0" -netdev user,id=eth0 -device virtio-net-device,netdev=eth0 -drive file=rootfs.ext2,if=none,format=raw,id=hd0 -device virtio-blk-device,drive=hd0
+./build.sh qemu_aarch64_virt_uutils_coreutils_defconfig
 ```
 
-After the boot process is complete, log in as `root` and run the `coreutils`
-command.
+Run QEMU with the generated kernel and rootfs.
+
+```
+qemu-system-aarch64 -M virt -cpu cortex-a53 -nographic -smp 1 \
+    -kernel buildroot/output/images/Image \
+    -append "rootwait root=/dev/vda console=ttyAMA0" \
+    -netdev user,id=eth0 \
+    -device virtio-net-device,netdev=eth0 \
+    -drive file=buildroot/output/images/rootfs.ext2,if=none,format=raw,id=hd0 \
+    -device virtio-blk-device,drive=hd0
+```
+
+Log in as `root` and run the `coreutils` command.
 
 ```
 Welcome to Buildroot
