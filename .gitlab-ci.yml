@@ -18,7 +18,7 @@ stages:
 qemu-aarch64:
   extends: .build-image
   script:
-    - ./build.sh qemu_aarch64_virt_uutils_coreutils_defconfig
+    - ./build.sh qemu_aarch64_virt_defconfig
 
 raspberry-pi2:
   extends: .build-image
