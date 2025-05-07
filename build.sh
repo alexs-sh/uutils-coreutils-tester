@@ -2,7 +2,7 @@
 
 DEFCONFIG=qemu_aarch64_virt_uutils_coreutils_defconfig
 
-if [ "$#" -gt 1 ]; then
+if [ "$#" -ge 1 ]; then
    DEFCONFIG=$1
 fi
 
