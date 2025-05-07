@@ -24,3 +24,8 @@ raspberry-pi2:
   extends: .build-image
   script:
     - ./build.sh raspberrypi2_defconfig
+
+raspberry-pi3:
+  extends: .build-image
+  script:
+    - ./build.sh raspberrypi3_defconfig
