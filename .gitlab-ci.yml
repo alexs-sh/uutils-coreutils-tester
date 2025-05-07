@@ -23,4 +23,4 @@ qemu-aarch64:
 raspberry-pi2:
   extends: .build-image
   script:
-    - ./build.sh raspberrypi2_uutils_coreutils_defconfig
+    - ./build.sh raspberrypi2_defconfig
