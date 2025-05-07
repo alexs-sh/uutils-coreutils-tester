@@ -6,21 +6,20 @@ if [ "$#" -ge 1 ]; then
    DEFCONFIG=$1
 fi
 
-# Prepare
 set -e
 . "$HOME/.cargo/env"
 
-echo "Using config $DEFCONFIG"
-cp -v "configs/$DEFCONFIG" buildroot/configs
+echo "Add config $DEFCONFIG"
+cp configs/"$DEFCONFIG" buildroot/configs/"$DEFCONFIG"
 
-# Apply config
+echo "Apply config $DEFCONFIG"
 cd buildroot
 make "$DEFCONFIG"
 
-# Build
+echo "Build"
 export FORCE_UNSAFE_CONFIGURE=1
 make
 cd -
 
-# Pack
-tar -czf images.tar.gz -C buildroot/output/images Image rootfs.ext2 rootfs.ext4
+echo "Pack"
+tar -czf images.tar.gz -C buildroot/output/  images
