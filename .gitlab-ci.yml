@@ -4,7 +4,7 @@ stages:
 
 .build-image:
   stage: images
-  image: debian:12
+  image: alexshcdr/uutils-coreutils-buildroot
   variables:
     GIT_SUBMODULE_STRATEGY: normal
   before_script:
@@ -33,5 +33,3 @@ raspberry-pi2:
   when: manual
   script:
     - ./build.sh raspberrypi2_defconfig
-
-
