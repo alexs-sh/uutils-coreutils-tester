@@ -14,7 +14,7 @@ Here is an example of building and running AArch64 images in QEMU.
 Build
 
 ```
-./build.sh qemu_aarch64_virt_defconfig
+./build-img.sh qemu_aarch64_virt_defconfig
 ```
 
 Run QEMU with the generated kernel and rootfs.
