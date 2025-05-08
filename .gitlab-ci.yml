@@ -7,8 +7,6 @@ stages:
   image: alexshcdr/uutils-coreutils-buildroot
   variables:
     GIT_SUBMODULE_STRATEGY: normal
-  before_script:
-    - ./ci/prepare-build-host.sh
   artifacts:
     name: "${CI_JOB_NAME}-${CI_COMMIT_SHORT_SHA}"
     expire_in: 1 days
