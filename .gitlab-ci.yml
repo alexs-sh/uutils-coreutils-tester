@@ -1,6 +1,19 @@
 stages:
+  - binaries
   - images
   - optional-images
+
+.build-binaries:
+  stage: binaries
+  variables:
+    GIT_SUBMODULE_STRATEGY: normal
+  artifacts:
+    name: "${CI_JOB_NAME}-${CI_COMMIT_SHORT_SHA}"
+    expire_in: 1 days
+    paths:
+      - binaries.tar.gz
+  tags:
+    - docker
 
 .build-image:
   stage: images
@@ -14,6 +27,18 @@ stages:
       - images.tar.gz
   tags:
     - docker
+
+aarch64:
+  extends: .build-binaries
+  image: alexshcdr/uutils-coreutils-aarch64
+  script:
+    - ./ci/build-binaries.sh aarch64-unknown-linux-gnu
+
+armv7:
+  extends: .build-binaries
+  image: alexshcdr/uutils-coreutils-armv7
+  script:
+    - ./ci/build-binaries.sh armv7-unknown-linux-gnueabihf
 
 qemu-aarch64:
   extends: .build-image
