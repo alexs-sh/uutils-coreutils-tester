@@ -65,3 +65,27 @@ Currently defined functions:
     shuf, sleep, sort, split, sum, tac, tail, tee, test, touch, tr, true,
     truncate, tsort, unexpand, uniq, unlink, vdir, wc, yes
 ```
+
+
+## Raspberry PI 3
+
+Here is an example of building, flashing and running images for Raspberry Pi 3.
+
+Build
+
+```
+./build-img.sh raspberrypi3_defconfig
+```
+
+Flash the image to the SD card
+
+
+```
+sudo dd if=buildroot/output/images/sdcard.img of=/dev/sda bs=4M
+```
+
+**NOTE**: /dev/sda is used here as an example.Please verify and change the
+output (of=/dev/sda) parameter to the appropriate device name.
+
+Insert the SD card into the device, power it on, log in as `root`.
+![rpi](./pics/rpi.jpg)
