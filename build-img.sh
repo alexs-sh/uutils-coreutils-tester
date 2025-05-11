@@ -34,4 +34,6 @@ make
 cd -
 
 echo "Pack"
-tar -czf images.tar.gz -C buildroot/output/  images
+tar -cvzf images.tar.gz -C buildroot/output/  images
+
+echo "Done"
