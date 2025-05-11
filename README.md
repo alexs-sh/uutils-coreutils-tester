@@ -7,6 +7,15 @@ This project provides images with [uutils/coreutils](https://github.com/uutils/c
 to test uutils/coreutils and Buildroot changes on embedded devices and QEMU.
 Since Buildroot development is patch-based, all these changes are also available on [Patchwork](https://patchwork.ozlabs.org/project/buildroot/patch/20250402165913.39797-2-shirokovalexs@gmail.com).
 
+## Requirements
+
+Buildroot is used to build the images, so a minimal set of tools such as gcc,
+make, and others should be installed. Please refer to the
+[Buildroot](https://buildroot.org/downloads/manual/manual.html#requirement)
+documentation or check the [Dockerfile](dockerfiles/buildroot.Dockerfile) and/or
+[helper script](helpers/prepare-build-host.sh) from the project.
+
+
 ## QEMU
 
 Here is an example of building and running AArch64 images in QEMU.
