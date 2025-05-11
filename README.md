@@ -28,7 +28,7 @@ Build
 
 Run QEMU with the generated kernel and rootfs.
 
-```
+``` bash
 qemu-system-aarch64 -M virt -cpu cortex-a53 -nographic -smp 1 \
     -kernel buildroot/output/images/Image \
     -append "rootwait root=/dev/vda console=ttyAMA0" \
@@ -80,7 +80,7 @@ Build
 Flash the image to the SD card
 
 
-```
+``` bash
 sudo dd if=buildroot/output/images/sdcard.img of=/dev/sda bs=4M
 ```
 
