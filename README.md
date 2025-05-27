@@ -45,7 +45,7 @@ Welcome to Buildroot
 buildroot login: root
 
 # coreutils --help
-coreutils 0.0.30 (multi-call binary)
+coreutils 0.1.0 (multi-call binary)
 
 Usage: coreutils [function [arguments...]]
        coreutils --list
