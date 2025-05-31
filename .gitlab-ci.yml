@@ -32,6 +32,11 @@ raspberry-pi3-multicall:
   script:
     - ./build-img.sh raspberrypi3_defconfig
 
+orange-pi-zero2-multicall:
+  extends: .build-image
+  script:
+    - ./build-img.sh orangepi_zero2w_defconfig
+
 qemu-aarch64-non-multicall:
   extends: .build-image
   when: manual
@@ -43,3 +48,9 @@ raspberry-pi3-non-multicall:
   when: manual
   script:
     - ./build-img.sh raspberrypi3_defconfig non-multicall
+
+orange-pi-zero2-non-multicall:
+  extends: .build-image
+  when: manual
+  script:
+    - ./build-img.sh orangepi_zero2w_defconfig non-multicall
