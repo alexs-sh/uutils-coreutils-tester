@@ -5,7 +5,7 @@
 
 This project provides images with [uutils/coreutils](https://github.com/uutils/coreutils) included. Its main purpose is
 to test uutils/coreutils and Buildroot changes on embedded devices and QEMU.
-Since Buildroot development is patch-based, all these changes are also available on [Patchwork](https://patchwork.ozlabs.org/project/buildroot/patch/20250402165913.39797-2-shirokovalexs@gmail.com).
+Since Buildroot development is patch-based, all these changes are also available on [Patchwork](https://patchwork.ozlabs.org/project/buildroot/patch/20250527171400.78560-1-shirokovalexs@gmail.com).
 
 ## Requirements
 
