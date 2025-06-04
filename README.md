@@ -1,6 +1,6 @@
 # About
 
-[![Build Status](https://gitlab.com/alexs-sh/uutils-coreutils-tester/badges/next/pipeline.svg)](https://gitlab.com/alexs-sh/uutils-coreutils-tester/-/commits/next)
+[![Build Status](https://gitlab.com/alexs-sh/uutils-coreutils-tester/badges/master/pipeline.svg)](https://gitlab.com/alexs-sh/uutils-coreutils-tester/-/commits/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project provides images with [uutils/coreutils](https://github.com/uutils/coreutils) included. Its main purpose is
