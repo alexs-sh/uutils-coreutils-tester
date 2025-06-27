@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEFCONFIG=qemu_aarch64_virt_uutils_coreutils_defconfig
+DEFCONFIG=qemu_aarch64_virt_defconfig
 MODE="multicall"
 
 if [ "$#" -ge 1 ]; then
