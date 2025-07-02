@@ -1,4 +1,5 @@
 stages:
+  - check
   - build-images
 
 .build-image:
@@ -19,6 +20,16 @@ stages:
     key: $CI_PROJECT_NAME
     paths:
       - $CACHE_DIR
+  tags:
+    - docker
+
+check-package:
+  stage: check
+  image: alexshcdr/uutils-coreutils-check-package
+  variables:
+    GIT_SUBMODULE_STRATEGY: normal
+  script:
+    - ./buildroot/utils/check-package ./buildroot/package/uutils-coreutils/*
   tags:
     - docker
 
