@@ -2,6 +2,7 @@
 
 DEFCONFIG=qemu_aarch64_virt_defconfig
 MODE="multicall"
+UTILS="default"
 
 if [ "$#" -ge 1 ]; then
    DEFCONFIG=$1
@@ -9,6 +10,10 @@ fi
 
 if [ "$#" -gt 1 ]; then
    MODE=$2
+fi
+
+if [ "$#" -gt 2 ]; then
+   UTILS=$3
 fi
 
 readonly BR_CONFIG=buildroot/configs/"$DEFCONFIG"
@@ -22,6 +27,11 @@ cp configs/"$DEFCONFIG" "$BR_CONFIG"
 if [ "$MODE" == "non-multicall" ]; then
   echo "Disable multicall"
   echo "# BR2_PACKAGE_UUTILS_COREUTILS_MULTICALL is not set" >> "$BR_CONFIG"
+fi
+
+if [ "$UTILS" != "default" ]; then
+  echo "Custom utilities:$UTILS"
+  echo "BR2_PACKAGE_UUTILS_COREUTILS_UTILITIES=\"$UTILS\"" >> "$BR_CONFIG"
 fi
 
 echo "Apply config $DEFCONFIG"
