@@ -5,8 +5,8 @@ CONFIG_NAME=uutils-coreutils
 CONFIG_FILE=${CONFIG_NAME}.config
 CMD="./utils/test-pkg -p uutils-coreutils  -c uutils-coreutils.config"
 
-if [ "$#" -gt 1 ]; then
-   MODE=$2
+if [ "$#" -ge 1 ]; then
+   MODE=$1
 fi
 
 

@@ -86,4 +86,4 @@ check-toolchains-all:
   allow_failure: true
   needs: ["check-package"]
   script:
-    - ./test-pkg.sh --all
+    - ./test-pkg.sh all
